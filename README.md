@@ -16,6 +16,7 @@ ipaddress/localhost:3000
 ```
  
 # **Deploy Starbucks Clone Application using nginx:**
+---
 sudo apt install nginx -y
 sudo systemctl start nginx.service
 sudo systemctl status nginx.service
@@ -23,6 +24,7 @@ npm run build ( in starbucks folder )
 and creted build folder
 all file copy in build folder
 cp -r * /  /var/www/html
+---
 
 
 # **Deploy Starbucks Clone Application using Docker:**
