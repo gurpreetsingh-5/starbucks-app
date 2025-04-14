@@ -40,6 +40,7 @@ touch Dockerfile
     COPY . .
     EXPOSE 3000
     CMD ["npm", "start"]
+
 ** multistage Docker file
 FROM node:alpine AS builder
 WORKDIR /app
