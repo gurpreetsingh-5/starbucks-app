@@ -33,9 +33,17 @@ sudo apt update
 git clone https://github.com/gurpreetsingh-5/starbucks-app.git
 sudo apt install docker.io -y
 touch Dockerfile
+  - FROM node:alpine
+    WORKDIR /app
+    COPY package.json package-lock.json ./
+    RUN npm ci --only=production
+    COPY . .
+    EXPOSE 3000
+    CMD ["npm", "start"]
+
  - FROM node:alpine
    WORKDIR /app
-   COPY package.json package-lock.json /
+   COPY package.json package-lock.json ./
    RUN npm install
    COPY . .
    EXPOSE 3000
