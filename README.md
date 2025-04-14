@@ -16,7 +16,7 @@ ipaddress/localhost:3000
 ```
  
 # **Deploy Starbucks Clone Application using nginx:**
----
+```
 sudo apt install nginx -y
 sudo systemctl start nginx.service
 sudo systemctl status nginx.service
@@ -24,10 +24,11 @@ npm run build ( in starbucks folder )
 and creted build folder
 all file copy in build folder
 cp -r * /  /var/www/html
----
+```
 
 
 # **Deploy Starbucks Clone Application using Docker:**
+```
 sudo apt update
 git clone https://github.com/gurpreetsingh-5/starbucks-app.git
 sudo apt install docker.io -y
@@ -45,7 +46,7 @@ docker run -d -p 80:3000 star (run port 80)
 docker run -d -p 3000:3000 star (run port 3000)
 docker ps -a (check container)
 docker exec -it <container-id>  /bin/bash
-
+```
 
 # Deploy Starbucks Clone Application AWS using DevSecOps Approach
 https://app.eraser.io/workspace/59NJfCay26dUMl5YAlFl?origin=share
