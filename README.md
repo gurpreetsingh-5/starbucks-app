@@ -1,3 +1,49 @@
+# **Deploy Starbucks Clone Application local**
+```
+git clone https://github.com/gurpreetsingh-5/starbucks-app.git
+open package.json or package-lock.json file.
+find engines in .json file and check node version
+install node and visit
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install v20.18.0
+node -v
+npm -v
+npm install
+npm run start
+ipaddress/localhost:3000
+```
+ 
+# **Deploy Starbucks Clone Application using nginx:**
+sudo apt install nginx -y
+sudo systemctl start nginx.service
+sudo systemctl status nginx.service
+npm run build ( in starbucks folder )
+and creted build folder
+all file copy in build folder
+cp -r * /  /var/www/html
+
+
+# **Deploy Starbucks Clone Application using Docker:**
+sudo apt update
+git clone https://github.com/gurpreetsingh-5/starbucks-app.git
+sudo apt install docker.io -y
+touch Dockerfile
+ - FROM node:alpine
+   WORKDIR /app
+   COPY package.json package-lock.json /
+   RUN npm install
+   COPY . .
+   EXPOSE 3000
+   CMD ["npm","start"]
+docker build -t star .
+docker images
+docker run -d -p 80:3000 star (run port 80)
+docker run -d -p 3000:3000 star (run port 3000)
+docker ps -a (check container)
+docker exec -it <container-id>  /bin/bash
+
 
 # Deploy Starbucks Clone Application AWS using DevSecOps Approach
 https://app.eraser.io/workspace/59NJfCay26dUMl5YAlFl?origin=share
