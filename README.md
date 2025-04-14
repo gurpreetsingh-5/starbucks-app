@@ -40,6 +40,21 @@ touch Dockerfile
     COPY . .
     EXPOSE 3000
     CMD ["npm", "start"]
+** multistage Docker file
+FROM node:alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+RUN npm run build  # If using a build step (e.g., React)
+
+FROM node:alpine
+WORKDIR /app
+COPY --from=builder /app .
+EXPOSE 3000
+CMD ["npm", "start"]
+
+
 
  - FROM node:alpine
    WORKDIR /app
